@@ -20,7 +20,6 @@ def Table(df):
                      )
     return st.plotly_chart(fig,use_container_width=True)
     
-movie_list = df['title'].values
 
 
 def load_lottiefile(filepath: str):
