@@ -26,23 +26,7 @@ def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
         return json.load(f)
 
-def get_recommendations(title, cosine_sim=cosine_sim):
-   
-    idx = indices[title]
 
-   
-    sim_scores = list(enumerate(cosine_sim[idx]))
-
-   
-    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
-
-    
-    sim_scores = sim_scores[1:6]
-
-    
-    course_indices = [i[0] for i in sim_scores]
-
-    return df['title'].iloc[course_indices]
     
 def clean_data(x):
     if isinstance(x, list):
@@ -67,6 +51,27 @@ tfidf_matrix = tfidf.fit_transform(df['description'])
 
 
 cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
+
+
+def get_recommendations(title, cosine_sim=cosine_sim):
+   
+    idx = indices[title]
+
+   
+    sim_scores = list(enumerate(cosine_sim[idx]))
+
+   
+    sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+
+    
+    sim_scores = sim_scores[1:6]
+
+    
+    course_indices = [i[0] for i in sim_scores]
+
+    return df['title'].iloc[course_indices]
+
+
 indices = pd.Series(df.index, index=df['title']).drop_duplicates()
 
 features = ['category-subject-area', 'associated-university-institution-company', 'syllabus']
