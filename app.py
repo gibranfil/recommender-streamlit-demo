@@ -40,7 +40,8 @@ def clean_data(x):
             
 def create_soup(x):
     return ' '.join(x['category-subject-area']) + ' ' + ' '.join(x['associated-university-institution-company']) + ' ' + x['syllabus'] 
-df['soup'] = df.apply(create_soup, axis=1)
+
+
 
 
 df= pd.read_csv("./webautomation_coursera.csv")
@@ -81,7 +82,9 @@ for feature in features:
 
 
 count = CountVectorizer(stop_words='english')
+df['soup'] = df.apply(create_soup, axis=1)
 count_matrix = count.fit_transform(df['soup'])
+
 
 
 
