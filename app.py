@@ -19,7 +19,7 @@ def Table(df):
                        fill_color='#ffdac4',line_color='grey',
                            font=dict(color='black', family="Lato", size=16),
                        align='left')))
-    fig.update_layout(height=500, title ={'text': "Coursera Recommendation", 'font': {'size': 22}},title_x=0.5
+    fig.update_layout(height=500,width=1000, title ={'text': "Coursera Recommendation", 'font': {'size': 22}},title_x=0.5
                      )
     return st.plotly_chart(fig,use_container_width=True)
     
@@ -112,7 +112,7 @@ st.header('Coursera Recommendation System')
     #quality="low",height=220
 #)
 selected_movie = st.selectbox(
-    "Type or select a movie from the dropdown",
+    "Type or select a course from the dropdown",
     movie_list
 )
 
