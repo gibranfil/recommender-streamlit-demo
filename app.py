@@ -10,7 +10,7 @@ import json
 
 def Table(df):
     fig=go.Figure(go.Table( columnorder = [1,2,3],
-          columnwidth = [10,48],
+          columnwidth = [20,48],
             header=dict(values=[' Title','Description', 'URL'],
                         line_color='black',font=dict(color='black',size= 19),height=40,
                         fill_color='#dd571c',#
