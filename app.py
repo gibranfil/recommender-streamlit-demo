@@ -118,9 +118,10 @@ selected_movie = st.selectbox(
 
 if st.button('Show Recommendation'):
     recommended_movie_names = get_recommendations(selected_movie)
+    st.write (recommended_movie_names)
     #list_of_recommended_movie = recommended_movie_names.to_list()
    # st.write(recommended_movie_names[['title', 'description']])
-    Table(recommended_movie_names)
+    #Table(recommended_movie_names)
     
 st.write('  '
          )
