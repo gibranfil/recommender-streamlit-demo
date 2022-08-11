@@ -5,6 +5,7 @@ from sklearn.metrics.pairwise import linear_kernel
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from streamlit_lottie import st_lottie
 import json
 
 def Table(df):
@@ -103,7 +104,7 @@ movie_list = df['title'].values
 
 st.header('Netflix Movie Recommendation System')
 lottie_coding = load_lottiefile("./m4.json")
-st_lottie(
+st.lottie(
     lottie_coding,
     speed=1,
     reverse=False,
