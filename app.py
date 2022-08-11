@@ -95,7 +95,7 @@ cosine_sim2 = cosine_similarity(count_matrix, count_matrix)
 
 df = df.reset_index()
 indices = pd.Series(df.index, index=df['title'])
-movie_list = df['title'].values
+vourse_list = df['title'].values
 
 
 ####################################################################
@@ -111,18 +111,16 @@ st.header('Coursera Recommendation System')
     #loop=True,
     #quality="low",height=220
 #)
-selected_movie = st.selectbox(
+selected_course = st.selectbox(
     "Type or select a course from the dropdown",
-    movie_list
+    course_list
 )
 
 if st.button('Coursera Recommendation'):
-    recommended_movie_names = get_recommendations(selected_movie)
+    recommended_names = get_recommendations(selected_course)
   
-    #list_of_recommended_movie = recommended_movie_names.to_list()
-   # st.write(recommended_movie_names[['title', 'description']])
     with st.container():
-        Table(recommended_movie_names)
+        Table(recommended_names)
     
 st.write('  '
          )
