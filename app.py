@@ -95,7 +95,7 @@ cosine_sim2 = cosine_similarity(count_matrix, count_matrix)
 
 df = df.reset_index()
 indices = pd.Series(df.index, index=df['title'])
-vourse_list = df['title'].values
+course_list = df['title'].values
 
 
 ####################################################################
