@@ -15,7 +15,7 @@ def Table(df):
                         line_color='black',font=dict(color='black',size= 19),height=40,
                         fill_color='#dd571c',#
                         align=['left','center']),
-                cells=dict(values=[df.title,df.description],
+                cells=dict(values=[df['title'],df['description']],
                        fill_color='#ffdac4',line_color='grey',
                            font=dict(color='black', family="Lato", size=16),
                        align='left')))
