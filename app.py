@@ -101,7 +101,7 @@ movie_list = df['title'].values
 ##################################################################
 
 st.header('Netflix Movie Recommendation System')
-lottie_coding = load_lottiefile("m4.json")
+lottie_coding = load_lottiefile("./m4.json")
 st_lottie(
     lottie_coding,
     speed=1,
