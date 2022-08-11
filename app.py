@@ -110,7 +110,7 @@ st.header('Coursera Recommendation System')
    # reverse=False,
     #loop=True,
     #quality="low",height=220
-)
+#)
 selected_movie = st.selectbox(
     "Type or select a movie from the dropdown",
     movie_list
