@@ -5,6 +5,7 @@ from sklearn.metrics.pairwise import linear_kernel
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+import json
 
 def Table(df):
     fig=go.Figure(go.Table( columnorder = [1,2,3],
