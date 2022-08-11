@@ -10,16 +10,16 @@ import json
 
 def Table(df):
     fig=go.Figure(go.Table( columnorder = [1,2,3],
-          columnwidth = [10,28],
-            header=dict(values=[' Title','Description'],
+          columnwidth = [10,48],
+            header=dict(values=[' Title','Description', 'URL'],
                         line_color='black',font=dict(color='black',size= 19),height=40,
                         fill_color='#dd571c',#
                         align=['left','center']),
-                cells=dict(values=[df['title'],df['description']],
+                cells=dict(values=[df['title'],df['description'],df['url']],
                        fill_color='#ffdac4',line_color='grey',
                            font=dict(color='black', family="Lato", size=16),
                        align='left')))
-    fig.update_layout(height=500, title ={'text': "Top 10 Movie Recommendations", 'font': {'size': 22}},title_x=0.5
+    fig.update_layout(height=500, title ={'text': "Coursera Recommendation", 'font': {'size': 22}},title_x=0.5
                      )
     return st.plotly_chart(fig,use_container_width=True)
     
@@ -102,23 +102,23 @@ movie_list = df['title'].values
 #streamlit
 ##################################################################
 
-st.header('Netflix Movie Recommendation System')
-lottie_coding = load_lottiefile("./m4.json")
-st_lottie(
-    lottie_coding,
-    speed=1,
-    reverse=False,
-    loop=True,
-    quality="low",height=220
+st.header('Coursera Recommendation System')
+#lottie_coding = load_lottiefile("./m4.json")
+#st_lottie(
+ #   lottie_coding,
+  #  speed=1,
+   # reverse=False,
+    #loop=True,
+    #quality="low",height=220
 )
 selected_movie = st.selectbox(
     "Type or select a movie from the dropdown",
     movie_list
 )
 
-if st.button('Show Recommendation'):
+if st.button('Coursera Recommendation'):
     recommended_movie_names = get_recommendations(selected_movie)
-    st.write (recommended_movie_names)
+  
     #list_of_recommended_movie = recommended_movie_names.to_list()
    # st.write(recommended_movie_names[['title', 'description']])
     Table(recommended_movie_names)
