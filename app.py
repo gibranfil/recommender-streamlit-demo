@@ -21,7 +21,7 @@ def Table(df):
                        align='left')))
     fig.update_layout(height=500,width=1000, title ={'text': "Coursera Recommendation", 'font': {'size': 22}},title_x=0.5
                      )
-    return st.plotly_chart(fig,use_container_width=False)
+    return st.plotly_chart(fig,use_container_width=True)
     
 
 
@@ -121,7 +121,8 @@ if st.button('Coursera Recommendation'):
   
     #list_of_recommended_movie = recommended_movie_names.to_list()
    # st.write(recommended_movie_names[['title', 'description']])
-    Table(recommended_movie_names)
+    with st.container():
+        Table(recommended_movie_names)
     
 st.write('  '
          )
