@@ -73,7 +73,7 @@ def get_recommendations(title, cosine_sim=cosine_sim):
     
     course_indices = [i[0] for i in sim_scores]
 
-    return df['title'].iloc[course_indices]
+    return df.iloc[course_indices]
 
 
 indices = pd.Series(df.index, index=df['title']).drop_duplicates()
@@ -121,7 +121,7 @@ if st.button('Show Recommendation'):
     st.write (recommended_movie_names)
     #list_of_recommended_movie = recommended_movie_names.to_list()
    # st.write(recommended_movie_names[['title', 'description']])
-    #Table(recommended_movie_names)
+    Table(recommended_movie_names)
     
 st.write('  '
          )
