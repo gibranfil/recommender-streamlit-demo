@@ -4,4 +4,4 @@ plotly
 scipy
 joblib
 streamlit_lottie
-sklearn
+scikit-learn
