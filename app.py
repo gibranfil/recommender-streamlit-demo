@@ -1,5 +1,6 @@
 import pandas as pd
 import streamlit as st
+import sklearn
 import plotly.graph_objects as go
 from sklearn.metrics.pairwise import linear_kernel
 from sklearn.feature_extraction.text import TfidfVectorizer
